@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dheeraj Kumar | B.Pharm Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(to right,#eef2f3,#dfe9f3);
+    color:#333;
+}
+
+header{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1581093458791-9d2a6c1c1c1c') center/cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+header h1{
+    font-size:50px;
+    animation:fadeDown 1s ease;
+}
+
+header p{
+    margin:15px 0;
+    font-size:20px;
+    animation:fadeUp 1.2s ease;
+}
+
+/* BUTTON */
+.btn{
+    padding:12px 30px;
+    background:linear-gradient(45deg,#00b4db,#0083b0);
+    border:none;
+    color:white;
+    border-radius:30px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+    margin:5px;
+}
+
+.btn.secondary{
+    background:linear-gradient(45deg,#ff7e5f,#ff3f34);
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+section{
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.flex{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.skill{
+    flex:1;
+    min-width:200px;
+    padding:25px;
+    border-radius:15px;
+    background:linear-gradient(45deg,#00b4db,#0083b0);
+    color:white;
+    text-align:center;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    background:#0083b0;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Dheeraj Kumar</h1>
+<p>B.Pharm Graduate | Medical Writer | Pharmacovigilance</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+<a href="resume.pdf" download class="btn secondary">Download Resume</a>
+
+</header>
+
+<section class="hidden">
+<div class="card">
+<h2>About Me</h2>
+<p>I am a B.Pharm graduate (2024) with strong knowledge of pharmaceutical sciences and healthcare. I have completed hospital training and I am passionate about Medical Writing and Pharmacovigilance roles.</p>
+</div>
+</section>
+
+<section class="hidden">
+<h2>Key Skills</h2>
+<div class="flex">
+<div class="skill">Pharmacology</div>
+<div class="skill">Drug Safety (PV)</div>
+<div class="skill">Medical Writing</div>
+<div class="skill">Clinical Research</div>
+</div>
+</section>
+
+<section class="hidden">
+<div class="card">
+<h2>Education</h2>
+<p>Bachelor of Pharmacy (B.Pharm) – 2024</p>
+</div>
+</section>
+
+<section class="hidden">
+<div class="card">
+<h2>Projects</h2>
+<ul>
+<li>Calibration of Analytical Instruments</li>
+<li>Herbal Hair Conditioner Formulation</li>
+</ul>
+</div>
+</section>
+
+<section id="contact" class="hidden">
+<div class="card">
+<h2>Contact</h2>
+<p>Email: yourmail@gmail.com<br>Phone: +91-XXXXXXXXXX<br>Location: Uttar Pradesh, India</p>
+
+<br><br>
+<a href="resume.pdf" download class="btn secondary">Download Resume</a>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Dheeraj Kumar | Portfolio</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
