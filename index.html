@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dheeraj Kumar | B.Pharm Portfolio</title>
+<title>Dheeraj Kumar | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -11,68 +12,86 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(to right,#eef2f3,#dfe9f3);
-    color:#333;
+    background:#0f172a;
+    color:#fff;
+    scroll-behavior:smooth;
 }
 
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HEADER */
 header{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1581093458791-9d2a6c1c1c1c') center/cover;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    color:white;
+    background:linear-gradient(45deg,#0f172a,#1e293b);
 }
 
 header h1{
     font-size:50px;
-    animation:fadeDown 1s ease;
 }
 
-header p{
-    margin:15px 0;
-    font-size:20px;
-    animation:fadeUp 1.2s ease;
+.typing{
+    color:#38bdf8;
+    font-size:22px;
+    margin-top:10px;
 }
 
 /* BUTTON */
 .btn{
+    margin-top:20px;
     padding:12px 30px;
-    background:linear-gradient(45deg,#00b4db,#0083b0);
-    border:none;
-    color:white;
     border-radius:30px;
-    font-weight:600;
-    text-decoration:none;
+    border:none;
+    background:linear-gradient(45deg,#38bdf8,#0ea5e9);
+    color:white;
+    cursor:pointer;
     transition:0.3s;
-    margin:5px;
-}
-
-.btn.secondary{
-    background:linear-gradient(45deg,#ff7e5f,#ff3f34);
 }
 
 .btn:hover{
     transform:scale(1.1);
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
+/* SECTION */
 section{
-    padding:60px 20px;
+    padding:80px 20px;
     max-width:1100px;
     margin:auto;
 }
 
+/* CARD */
 .card{
-    background:rgba(255,255,255,0.7);
+    background:rgba(255,255,255,0.05);
     backdrop-filter:blur(10px);
-    border-radius:15px;
     padding:25px;
-    margin-bottom:25px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+    border-radius:15px;
+    margin-bottom:20px;
     transition:0.3s;
 }
 
@@ -80,47 +99,45 @@ section{
     transform:translateY(-10px);
 }
 
+/* SKILLS */
 .flex{
     display:flex;
-    gap:20px;
     flex-wrap:wrap;
+    gap:20px;
 }
 
 .skill{
     flex:1;
     min-width:200px;
-    padding:25px;
-    border-radius:15px;
-    background:linear-gradient(45deg,#00b4db,#0083b0);
-    color:white;
-    text-align:center;
-    transition:0.3s;
-}
-
-.skill:hover{
-    transform:scale(1.05);
-}
-
-footer{
-    background:#0083b0;
-    color:white;
-    text-align:center;
     padding:20px;
+    border-radius:10px;
+    background:#1e293b;
+    text-align:center;
 }
 
-@keyframes fadeDown{
-    from{opacity:0;transform:translateY(-40px);}
-    to{opacity:1;transform:translateY(0);}
+/* CONTACT LINKS */
+a{
+    color:#38bdf8;
+    text-decoration:none;
 }
 
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
+/* FLOAT WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
 }
 
+/* SCROLL ANIMATION */
 .hidden{
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(40px);
     transition:1s;
 }
 
@@ -133,65 +150,86 @@ footer{
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
 <header>
 <h1>Dheeraj Kumar</h1>
-<p>B.Pharm Graduate | Medical Writer | Pharmacovigilance</p>
-
-<a href="#contact" class="btn">Contact Me</a>
-<a href="resume.pdf" download class="btn secondary">Download Resume</a>
-
+<div class="typing" id="typing"></div>
+<a href="resume.pdf" download class="btn">⬇ Download Resume</a>
 </header>
 
-<section class="hidden">
+<!-- ABOUT -->
+<section id="about" class="hidden">
 <div class="card">
 <h2>About Me</h2>
-<p>I am a B.Pharm graduate (2024) with strong knowledge of pharmaceutical sciences and healthcare. I have completed hospital training and I am passionate about Medical Writing and Pharmacovigilance roles.</p>
+<p>B.Pharm Graduate (2024) passionate about Medical Writing, Pharmacovigilance & Clinical Research.</p>
 </div>
 </section>
 
-<section class="hidden">
-<h2>Key Skills</h2>
+<!-- SKILLS -->
+<section id="skills" class="hidden">
+<h2>Skills</h2>
 <div class="flex">
 <div class="skill">Pharmacology</div>
-<div class="skill">Drug Safety (PV)</div>
+<div class="skill">Drug Safety</div>
 <div class="skill">Medical Writing</div>
 <div class="skill">Clinical Research</div>
 </div>
 </section>
 
-<section class="hidden">
-<div class="card">
-<h2>Education</h2>
-<p>Bachelor of Pharmacy (B.Pharm) – 2024</p>
-</div>
-</section>
-
-<section class="hidden">
-<div class="card">
-<h2>Projects</h2>
-<ul>
-<li>Calibration of Analytical Instruments</li>
-<li>Herbal Hair Conditioner Formulation</li>
-</ul>
-</div>
-</section>
-
+<!-- CONTACT -->
 <section id="contact" class="hidden">
 <div class="card">
-<h2>Contact</h2>
-<p>Email: Dheerajkbsr203396@gmail.com<br>Phone: +919368635831<br>Location: Uttar Pradesh, India</p>
+<h2>Contact Me</h2>
 
-<br><br>
-<a href="resume.pdf" download class="btn secondary">Download Resume</a>
+<p>📧 <a href="mailto:Dheerajkbsr203396@gmail.com">Email Me</a></p>
+<p>📞 <a href="tel:9368635831">Call Me</a></p>
+<p>💬 <a href="https://wa.me/919368635831" target="_blank">WhatsApp</a></p>
+<p>📸 <a href="https://instagram.com/mr_Dheeraj_shandilya__" target="_blank">Instagram</a></p>
 
 </div>
 </section>
 
-<footer>
-<p>© 2026 Dheeraj Kumar | Portfolio</p>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919368635831" class="whatsapp">💬</a>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:20px;background:#020617;">
+© 2026 Dheeraj Kumar
 </footer>
 
+<!-- JS -->
 <script>
+// Typing Effect
+const text = ["Medical Writer","Pharmacovigilance","B.Pharm Graduate"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+    if(i<text.length){
+        if(!isDeleting && j<=text[i].length){
+            current = text[i].substring(0,j++);
+        }else if(isDeleting && j>=0){
+            current = text[i].substring(0,j--);
+        }
+
+        document.getElementById("typing").innerHTML=current;
+
+        if(j==text[i].length) isDeleting=true;
+        if(j==0){ isDeleting=false; i++; }
+
+        setTimeout(type,100);
+    }
+}
+type();
+
+// Scroll Animation
 const observer = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
